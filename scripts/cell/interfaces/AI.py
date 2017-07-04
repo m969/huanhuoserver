@@ -144,7 +144,6 @@ class AI:
                                                    'spellCaster': self,
                                                    'triggerStrategy': triggerStrategy
                                                })
-                #if self.name == "狼兽人怪":
                 self.allClients.Attack_01()
             else:
                 bullet = KBEngine.createEntity("Trigger",
@@ -161,7 +160,6 @@ class AI:
                                                    'spellCaster': self,
                                                    'triggerStrategy': triggerStrategy
                                                })
-                #if self.name == "狼兽人怪":
                 self.allClients.Attack_02()
             # 技能移动到目标位置
             bullet.moveToPointSample((point.x, 1, point.z), self.skillSpeed)
@@ -259,6 +257,10 @@ class AI:
 
             # 狼兽人怪释放技能
             if self.name == "狼兽人怪":
+                self.langshourenguaiMonsterSkill(self.targetEntity.position, self.position.y)
+
+            # 狼兽人怪释放技能
+            if self.name == "小狼兽人":
                 self.langshourenguaiMonsterSkill(self.targetEntity.position, self.position.y)
 
 
