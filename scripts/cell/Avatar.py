@@ -462,11 +462,11 @@ class Avatar(KBEngine.Entity, EntityObject, CombatEntity):
         :param exposed: 
         :return: 
         """
-        DEBUG_MSG("onRequstAllName")
-        #KBEngine.executeRawDatabaseCommand(
-            #"CREATE TABLE mini_Spaces (name VARCHAR(255) NOT NULL DEFAULT '' primary key, dbid BIGINT)",
-            #_dbCmdCreateTblCB)
-        self.allClients.OnFindFriends("bbb")
+        DEBUG_MSG("FindFriends")
+        avatarId = self.id
+        KBEngine.globalData["avatarId"] = self.id
+        DEBUG_MSG(avatarId)
+        KBEngine.executeRawDatabaseCommand("SELECT sm_entityName from tbl_Avatar", _getAllEntityName)
 
     def AddFriends(self, exposed, goldxFriendsName):
         """
@@ -481,12 +481,18 @@ class Avatar(KBEngine.Entity, EntityObject, CombatEntity):
         DEBUG_MSG(self.avatarFriends)
         self.allClients.OnShowAllFriends(self.avatarFriends)
 
-    def DeleteFriends(self):
+    def DeleteFriends(self, exposed, goldxFriendsName):
         """
         郑晓飞---删除好友，同时也删除数据库中的信息
         :return: 
         """
         DEBUG_MSG("Avatar:DeleteFriends")
+        tempFriends = self.avatarFriends
+        DEBUG_MSG(tempFriends)
+        del tempFriends[goldxFriendsName]
+        self.avatarFriends = tempFriends
+        DEBUG_MSG(self.avatarFriends)
+        self.allClients.OnShowAllFriends(self.avatarFriends)
 
     def ShowAllFriends(self, exposed):
         """
@@ -496,3 +502,25 @@ class Avatar(KBEngine.Entity, EntityObject, CombatEntity):
         DEBUG_MSG("Avatar:ShowAllFriends")
         DEBUG_MSG(self.avatarFriends)
         self.allClients.OnShowAllFriends(self.avatarFriends)
+
+    def SendAvatarNameToClient(self, entityNames):
+        """
+        将所有玩家的名字发给客户端
+        :param entityNames: 数据库中所有注册玩家的字符串
+        :return: 
+        """
+        DEBUG_MSG("Avatar:SendAvatarNameToClient")
+        self.allClients.OnFindFriends(entityNames)
+
+def _getAllEntityName(resultCollect, num, errorInfo):
+    DEBUG_MSG("_getAllEntityName")
+    DEBUG_MSG(resultCollect)
+    entityNames = ""
+    if errorInfo is None:
+        for value in resultCollect:
+            entityNames += str(value[0]) + " "
+        DEBUG_MSG(KBEngine.globalData["avatarId"])
+        KBEngine.entities[KBEngine.globalData["avatarId"]].SendAvatarNameToClient(entityNames)
+        DEBUG_MSG("_getAllEntityName" + entityNames)
+    else:
+        ERROR_MSG("create tbl failed")

@@ -31,18 +31,6 @@ class Space(KBEngine.Entity, EntityObject):
         self.monsterSpawnPositionList = self.spaceData["怪物数据"]       # 怪物出生点列表
         for monsterName, monsterSpawnPositionList in self.monsterSpawnPositionList.items():
             self.monsterSpawnCounter[monsterName] = 0
-        # for monsterName, monsterSpawnPositionList in self.monsterSpawnPositionList.items():      # 遍历字典取出数据进行怪物的创建
-        #     for spawnPosition in monsterSpawnPositionList:      # 取出怪物的出生坐标
-        #         monster = KBEngine.createEntity(
-        #                                         "Monster",
-        #                                         self.spaceID,
-        #                                         spawnPosition,
-        #                                         (0.1, 0.1, 0.1),
-        #                                         {
-        #                                             "name": monsterName,
-        #                                             'entityName': monsterName
-        #                                         })      # 创建Monster
-        #         monster.receiveSpawnPos(spawnPosition)
 
         self.npcsData = self.spaceData["Npc数据"]      # 取出场景Npc数据
         for npcName, npcData in self.npcsData.items():
