@@ -1,0 +1,21 @@
+<root>
+    <Volatile>
+		<position/>
+		<yaw/>
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Properties>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

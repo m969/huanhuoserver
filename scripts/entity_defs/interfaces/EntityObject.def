@@ -1,0 +1,78 @@
+<root>
+
+	<Properties>
+		<name>
+			<Type>              UNICODE              </Type>
+			<Flags>             ALL_CLIENTS          </Flags>
+			<Default>           None                 </Default>
+		</name>
+		
+		<modelName>
+			<Type>              UNICODE              </Type>
+			<Flags>             ALL_CLIENTS          </Flags>
+			<Default>           None                 </Default>
+		</modelName>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+		<hasAttr>
+			<Arg>               UNICODE             </Arg>
+		</hasAttr>
+
+		<getAttr>
+			<Arg>               UNICODE            </Arg>
+		</getAttr>
+
+		<setAttr>
+			<Arg>               UNICODE               </Arg>
+			<Arg>               PYTHON               </Arg>
+		</setAttr>
+
+		<delAttr>
+			<Arg>               UNICODE              </Arg>
+		</delAttr>
+		
+		<getDatabaseID/>
+		<getScriptName/>
+		<getCell/>
+	</BaseMethods>
+
+	<CellMethods>
+		<hasAttr>
+			<Arg>               UNICODE             </Arg>
+		</hasAttr>
+
+		<getAttr>
+			<Arg>               UNICODE            </Arg>
+		</getAttr>
+
+		<setAttr>
+			<Arg>               UNICODE               </Arg>
+			<Arg>               PYTHON               </Arg>
+		</setAttr>
+
+		<delAttr>
+			<Arg>               UNICODE              </Arg>
+		</delAttr>
+
+		<hasTag>
+			<Arg>               UNICODE               </Arg>
+		</hasTag>
+
+		<setTag>
+			<Arg>               UNICODE                </Arg>
+		</setTag>
+
+		<isAvatar/>
+		<isMonster/>
+		<isNpc/>
+		<isCombatEntity/>
+		<isTrigger/>
+		<getEntityID/>
+		<getDatabaseID/>
+	</CellMethods>
+
+</root>

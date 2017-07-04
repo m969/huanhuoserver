@@ -1,0 +1,94 @@
+<root>
+    <Volatile>
+		<position/>
+		<!--<position> 0 </position> Don't update-->
+		<yaw/>
+		<!--<pitch> 20 </pitch>-->
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Implements>
+		<Interface>			EntityObject		</Interface>
+	</Implements>
+
+	<Properties>
+
+		<cityName>
+			<Type>              UNICODE              </Type>
+			<Flags>             ALL_CLIENTS          </Flags>
+			<Default>           None                 </Default>
+		</cityName>
+
+		<spaceName>
+			<Type>              UNICODE              </Type>
+			<Flags>             ALL_CLIENTS          </Flags>
+			<Default>           None                 </Default>
+		</spaceName>
+
+		<xinShouYinDaoDBID>
+			<Type>           DBID            </Type>
+			<Flags>          BASE              </Flags>
+			<Persistent>     true               </Persistent>
+			<Default>        0                 </Default>
+		</xinShouYinDaoDBID>
+
+		<SP_Concentration><!-->灵力浓度<-->
+			<Type>           INT32            </Type>
+			<Flags>          ALL_CLIENTS              </Flags>
+			<Persistent>     true               </Persistent>
+			<Default>        10                 </Default>
+		</SP_Concentration>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+		<loginSpace>
+			<Arg> 		MAILBOX 	</Arg>
+		</loginSpace>
+
+		<logoutSpace>
+			<Arg>		INT32		</Arg>
+		</logoutSpace>
+
+		<requestTeleport>
+			<Arg>		MAILBOX		</Arg>
+		</requestTeleport>
+
+		<onEnter>
+			<Arg> 		MAILBOX 	</Arg>
+		</onEnter>
+
+		<onLeave>
+			<Arg>		INT32		</Arg>
+		</onLeave>
+
+	</BaseMethods>
+
+	<CellMethods>
+		<onEnter>
+			<Arg> 		MAILBOX 	</Arg>
+		</onEnter>
+
+		<onLeave>
+			<Arg>		INT32		</Arg>
+		</onLeave>
+
+		<requestNpc>
+			<Arg> 		UNICODE 	</Arg>
+		</requestNpc>
+
+		<onNpcEnter>
+			<Arg> 		MAILBOX 	</Arg>
+		</onNpcEnter>
+
+		<monsterReborn>
+			<Arg>		VECTOR3 	</Arg>
+			<Arg>		UNICODE 	</Arg>
+		</monsterReborn>
+
+	</CellMethods>
+
+</root>

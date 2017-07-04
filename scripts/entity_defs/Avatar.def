@@ -1,0 +1,356 @@
+<root>
+    <Volatile>
+		<position/>
+		<!--<position> 0 </position> Don't update-->
+		<yaw/>
+		<!--<pitch> 20 </pitch>-->
+		<pitch/>
+		<roll/>
+	</Volatile>
+	
+    <Implements>
+		<Interface>	        EntityObject		</Interface>
+		<Interface>	        CombatEntity		</Interface>
+    </Implements>
+    
+	<Properties>
+		<entityName><!-- 实体名称 -->
+			<Type>          UNICODE                </Type>
+			<Flags>         ALL_CLIENTS               </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       avatarname                  </Default>
+		</entityName>
+
+		<spaceName><!-- 场景名称 -->
+			<Type>          UNICODE                </Type>
+			<Flags>         BASE_AND_CLIENT               </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       MuLingCunSpace                  </Default>
+		</spaceName>
+
+		<goldCount><!--金币数量-->
+			<Type>          INT32                </Type>
+			<Flags>         OWN_CLIENT           </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       0                 </Default>
+		</goldCount>
+
+		<HP><!--生命值-->
+			<Type>          INT32                </Type>
+			<Flags>         ALL_CLIENTS               </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       10                  </Default>
+		</HP>
+
+		<HP_Max><!--生命值上限-->
+			<Type>          INT32             </Type>
+			<Flags>         ALL_CLIENTS            </Flags>
+			<Persistent>    true              </Persistent>
+			<Default>       100               </Default>
+		</HP_Max>
+
+		<MSP><!--最大一次灵力释放量-->
+			<Type>			INT32				</Type>
+			<Flags>			ALL_CLIENTS			</Flags>
+			<Persistent>	true					</Persistent> 
+			<Default>		10				       </Default>
+		</MSP>
+
+		<MSP_Max><!--最大一次灵力释放量上限-->
+			<Type>			INT32				</Type>
+			<Flags>			ALL_CLIENTS			</Flags>
+			<Persistent>	true					</Persistent> 
+			<Default>		100				</Default>
+		</MSP_Max>
+
+		<SP>
+			<Type>          INT32                </Type>
+			<Flags>         ALL_CLIENTS               </Flags>
+			<Persistent>    true                 </Persistent>
+			<Default>       100                  </Default>
+		</SP>
+
+		<SP_Max><!-->SuperNaturalPower 灵力上限值，会随时间增大<-->
+			<Type>          INT32                 </Type>
+			<Flags>         ALL_CLIENTS           </Flags>
+			<Persistent>    true                 </Persistent>
+			<Default>       100                    </Default>
+		</SP_Max>
+
+		<talent><!-->天赋，无上限值，天赋越高，单位时间角色 灵力上限值 提升越多<-->
+			<Type>          INT32                 </Type>
+			<Flags>         ALL_CLIENTS           </Flags>
+			<Persistent>    true                 </Persistent>
+			<Default>       5                    </Default>
+		</talent>
+
+		<level><!-->等级，既取决于SP_Max，也会束缚SP_Max，当 灵力上限值 达到当前等级的最大值时，角色必须晋级，灵力上限值 才会继续随时间提升<-->
+			<Type>          INT32           </Type>
+			<Flags>         ALL_CLIENTS     </Flags>
+			<Persistent>    true              </Persistent>
+			<Default>       1                </Default>
+		</level>
+
+		<levelName><!-->等级名称，既取决于SP_Max，也会束缚SP_Max，当 灵力上限值 达到当前等级的最大值时，角色必须晋级，灵力上限值 才会继续随时间提升<-->
+			<Type>          UNICODE           </Type>
+			<Flags>         ALL_CLIENTS     </Flags>
+			<Persistent>    true              </Persistent>
+			<Default>       1                </Default>
+		</levelName>
+
+		<levelPeriod><!-->等级时期，既取决于SP_Max，也会束缚SP_Max，当 灵力上限值 达到当前等阶的最大值时，角色必须进阶，灵力上限值 才会继续随时间提升<-->
+			<Type>          INT32           </Type>
+			<Flags>         ALL_CLIENTS     </Flags>
+			<Persistent>    true              </Persistent>
+			<Default>       1                </Default>
+		</levelPeriod>
+
+		<levelPeriodName><!-->等级时期名称，既取决于SP_Max，也会束缚SP_Max，当 灵力上限值 达到当前等阶的最大值时，角色必须进阶，灵力上限值 才会继续随时间提升<-->
+			<Type>          UNICODE           </Type>
+			<Flags>         ALL_CLIENTS     </Flags>
+			<Persistent>    true              </Persistent>
+			<Default>       1                </Default>
+		</levelPeriodName>
+
+		<lastOnlineTime><!-->最后一次在线时间<-->
+			<Type>          INT32                   </Type>
+			<Flags>         CELL_PRIVATE       </Flags>
+			<Persistent>    true                </Persistent>
+		</lastOnlineTime>
+
+		<currentTaskID><!-->当前任务id<-->
+			<Type>          INT32                        </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN         </Flags>
+			<Persistent>    true                       </Persistent>
+		</currentTaskID>
+
+		<avatarBag><!--角色背包-->
+			<Type>          AVATAR_BAG                </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN        </Flags>
+			<Persistent>    true                       </Persistent>
+		</avatarBag>
+
+		<!--郑晓飞--朋友列表-->
+		<avatarFriends>
+			<Type>          AVATAR_FRIENDS                </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN        </Flags>
+			<Persistent>    true                       </Persistent>
+		</avatarFriends>
+
+		<taskInfoList><!--任务列表-->
+			<Type>          TASK_INFO_LIST                         </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN               </Flags>
+			<Persistent>    true                       </Persistent>
+			<Default>                                  </Default>
+		</taskInfoList>
+
+		<taskCounter><!--任务计数器-->
+			<Type>          INT32                    </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN        </Flags>
+			<Default>       0                          </Default>
+		</taskCounter>
+
+		<currentEquipmentID><!-->当前武器id<-->
+			<Type>          INT32                       </Type>
+			<Flags>         CELL_PUBLIC_AND_OWN         </Flags>
+			<Persistent>    true                        </Persistent>
+		</currentEquipmentID>
+	</Properties>
+
+	<ClientMethods>
+
+		<onMainAvatarEnterSpace>
+			<Arg>           INT32              </Arg>
+			<Arg>           UNICODE              </Arg>
+		</onMainAvatarEnterSpace>
+
+		<onMainAvatarLeaveSpace>
+		</onMainAvatarLeaveSpace>
+
+		<DoMove>
+			<Arg>           VECTOR3            </Arg>
+		</DoMove>
+
+		<OnStopMove>
+		</OnStopMove>
+
+		<DoStore>
+			<Arg>           STORE_GOODS_ID_LIST    </Arg>
+		</DoStore>
+
+		<DoDialog>
+			<Arg>           UNICODE              </Arg>
+			<Arg>           UNICODE              </Arg>
+		</DoDialog>
+
+		<BuyResult>
+			<Arg>           INT32                </Arg>
+		</BuyResult>
+
+		<DoSkillQ>
+			<Arg>           VECTOR3               </Arg>
+			<Arg>           FLOAT               </Arg>
+		</DoSkillQ>
+
+		<DoSkillW>
+			<Arg>           VECTOR3               </Arg>
+		</DoSkillW>
+
+		<OnRespawn>
+			<Arg>			VECTOR3 			  </Arg>
+		</OnRespawn>
+		
+		<!--郑晓飞--客户端的对话-->
+		<onReciveChatMessage>
+			<Arg>			UNICODE 			  </Arg>
+			<Arg>			UNICODE 			  </Arg>
+		</onReciveChatMessage>
+
+		<!--郑晓飞--请求好友-->
+		<OnFindFriends>
+			<Arg>			UNICODE 			  </Arg>
+		</OnFindFriends>
+
+		<!--郑晓飞--请求全部好友-->
+		<OnShowAllFriends>
+			<Arg>            AVATAR_FRIENDS       </Arg>
+		</OnShowAllFriends>
+
+	</ClientMethods>
+
+	<BaseMethods>
+		<createCell>
+			<Arg>           MAILBOX              </Arg>
+		</createCell>
+		
+		<setAvatarName>
+			<Arg>           UNICODE                 </Arg>
+		</setAvatarName>
+
+		<teleportToSpace>
+			<Arg>           MAILBOX              </Arg>
+		</teleportToSpace>
+
+		<onTeleportSuccess>
+			<Arg>           UNICODE                 </Arg>
+		</onTeleportSuccess>
+	</BaseMethods>
+
+	<CellMethods>
+
+		<onAvatarEnterSpace>
+			<Arg>               INT32                </Arg>
+			<Arg>               UNICODE                </Arg>
+		</onAvatarEnterSpace>
+
+		<onLeaveSpaceClientInputInValid>
+		    <Exposed/>
+		</onLeaveSpaceClientInputInValid>
+
+		<isGoingToTeleport>
+			<Arg>		UNICODE		</Arg>
+			<Arg>       VECTOR3                  </Arg>
+		</isGoingToTeleport>
+
+		<teleportToSpace>
+			<Arg>		MAILBOX		</Arg>
+			<Arg>		VECTOR3		</Arg>
+			<Arg>		VECTOR3		</Arg>
+		</teleportToSpace>
+
+		<requestMove>
+			<Exposed/>
+			<Arg>           VECTOR3                </Arg>
+		</requestMove>
+
+		<stopMove>
+			<Exposed/>
+		</stopMove>
+
+		<requestDialog>
+			<Exposed/>
+			<Arg>           INT32                    </Arg>
+			<Arg>           UNICODE                 </Arg>
+		</requestDialog>
+
+		<requestBuyGoods>
+			<Exposed/>
+			<Arg>           INT32                    </Arg>
+			<Arg>           UNICODE                  </Arg>
+			<Arg>           INT32                    </Arg>
+		</requestBuyGoods>
+
+		<requestDoSkillQ>
+			<Exposed/>
+			<Arg>           VECTOR3                </Arg>
+			<Arg>           FLOAT                </Arg>
+		</requestDoSkillQ>
+
+		<requestDoSkillW>
+			<Exposed/>
+			<Arg>           VECTOR3                </Arg>
+		</requestDoSkillW>
+
+		<setAvatarName>
+			<Arg>           UNICODE                </Arg>
+		</setAvatarName>
+
+		<getTaskInfo>
+			<Arg>           UNICODE                </Arg>
+		</getTaskInfo>
+
+		<isTaskFinish>
+			<Arg>           UNICODE                </Arg>
+			<Arg>           INT32                </Arg>
+		</isTaskFinish>
+
+		<giveAward>
+			<Arg>           UNICODE                </Arg>
+			<Arg>           INT32                </Arg>
+		</giveAward>
+
+		<giveTask>
+			<Arg>           MAILBOX                </Arg>
+			<Arg>           INT32                  </Arg>
+		</giveTask>
+
+		<giveGoods>
+			<Arg>           INT32                </Arg>
+		</giveGoods>
+
+		<deductMoney>
+			<Arg>           INT32                </Arg>
+		</deductMoney>
+
+		<!--郑晓飞---响应客户端请求聊天函数-->
+		<onSendChatMessage>
+			<Exposed/>
+			<Arg>       UNICODE      </Arg>
+			<Arg>       UNICODE      </Arg>
+		</onSendChatMessage>
+
+		<!--郑晓飞---返回数据库中的所有注册人员-->
+		<FindFriends>
+			<Exposed/>
+		</FindFriends>
+
+		<!--郑晓飞---添加朋友-->
+		<AddFriends>
+			<Exposed/>
+			<Arg>       UNICODE      </Arg>
+		</AddFriends>
+
+		<!--郑晓飞---删除朋友-->
+		<DeleteFriends>
+			<Exposed/>
+			<Arg>       UNICODE      </Arg>
+		</DeleteFriends>
+
+		<!--郑晓飞---显示全部朋友-->
+		<ShowAllFriends>
+			<Exposed/>
+		</ShowAllFriends>
+
+	</CellMethods>
+
+</root>

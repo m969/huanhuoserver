@@ -1,0 +1,34 @@
+<root>
+	<Volatile>
+		<position/>
+		<yaw/>
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Properties>
+		
+	</Properties>
+
+	<ClientMethods>
+
+		<StartMove>
+		</StartMove>
+
+		<StopMove>
+		</StopMove>
+
+		<Attack_01>
+		</Attack_01>
+
+		<Attack_02>
+		</Attack_02>
+	</ClientMethods>
+
+	<BaseMethods>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

@@ -1,0 +1,81 @@
+<root>
+	<!--
+		����������({assets}/res/server/kbengine.xml)
+
+		��������Ҫ�ı���������, ����({assets}/res/server/kbengine.xml)�и���kbe/res/server/kbengine_defs.xml�Ķ�Ӧ�������޸�, 
+		�����ĺô��ǲ����ƻ�������Ĭ�����ã�������������ʱҲ����������ͻ���Լ��ڶ����߼���Ŀʱ����Ӱ�쵽��������Ŀ���á�
+		��ϸ˵�����ο���http://kbengine.org/cn/docs/configuration/kbengine.html
+	-->
+
+	<gameUpdateHertz> 10 </gameUpdateHertz>
+	
+	<trace_packet>
+		<debug_type> 0 </debug_type>
+	</trace_packet>
+	
+	<app_publish> 0 </app_publish>
+	
+	<!-- defined => kbe/res/server/kbengine_defs.xml -->
+	<dbmgr>
+		<account_system>
+			<!-- 账号找回密码相关
+				(Account reset password)
+			-->
+			<account_resetPassword>
+				<!-- 是否开放重设密码
+					(Whether open reset password)
+				-->
+				<enable>	true	</enable>
+			</account_resetPassword>
+			
+			<!-- 账号注册相关
+				(Account registration)
+			-->
+			<account_registration> 
+				<!-- 是否开放注册 
+					(Whether open registration)
+				-->
+				<enable>	true	</enable>
+				
+				<!-- 登录合法时游戏数据库找不到游戏账号则自动创建 
+					(When logged in, the game database can not find the game account is automatically created)
+				-->
+				<loginAutoCreate> true </loginAutoCreate>
+			</account_registration>
+		</account_system>
+
+		<databaseInterfaces>
+			<default>
+				<!-- <host> localhost </host> -->
+				<databaseName> MiniGame </databaseName>
+			</default>
+		</databaseInterfaces>
+	</dbmgr>
+	
+	<baseapp>
+		<backupPeriod> 500 </backupPeriod>
+	</baseapp>
+
+	<cellapp>
+		<!-- 默认AOI半径, 脚本中可以改变它 
+			(Default AOI radius, the script can change it)
+		-->
+		<defaultAoIRadius>			
+			<radius> 200.0 </radius>
+			<hysteresisArea> 5.0 </hysteresisArea>
+		</defaultAoIRadius>
+	</cellapp>
+
+	<channelCommon> 
+		<!-- 加密通信，只对外部通道
+			(Encrypted communication, channel-external only)
+			
+			可选择的加密方式(Optional encryption):
+				0: 无加密(No Encryption)
+				1: Blowfish
+				2: RSA (res\key\kbengine_private.key)
+		 -->
+		<encrypt_type> 0 </encrypt_type>
+	</channelCommon>
+
+</root>

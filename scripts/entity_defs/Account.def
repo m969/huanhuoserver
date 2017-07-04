@@ -1,0 +1,72 @@
+<root>
+
+	<!-->
+	[类型]				[ClientEntity]		[BaseEntity]		[CellEntity]
+	BASE			 	 -						S					-
+	BASE_AND_CLIENT	 	 C						S					-
+	CELL_PRIVATE	 	 -						-					S
+	CELL_PUBLIC		 	 -						-					SC
+	CELL_PUBLIC_AND_OWN	 C						-					SC
+	ALL_CLIENTS		 	 C(All Clients)			-					SC
+	OWN_CLIENT		 	 C						-					S
+	OTHER_CLIENTS	 	 C(Other Clients)		-					SC
+	<-->
+
+	<!--
+	[Name]			[Bytes]
+
+	UINT8			1
+	UINT16			2
+	UINT32			4
+	UINT64			8
+
+	INT8			1
+	INT16			2
+	INT32			4
+	INT64			8
+
+	FLOAT			4
+	DOUBLE			8
+
+	VECTOR2			12
+	VECTOR3			16
+	VECTOR4			20
+
+	STRING			N
+	UNICODE			N
+	PYTHON			N
+	PY_DICT			N
+	PY_TUPLE		N
+	PY_LIST			N
+	MAILBOX			N
+	BLOB			N
+	-->
+
+	<Properties>
+		<avatarDBID>
+			<Type>                 DBID             </Type>
+			<Flags>                BASE              </Flags>
+			<Persistent>           true               </Persistent>
+		</avatarDBID>
+
+		<avatarDBIDList>
+			<Type>                 DBID_LIST         </Type>
+			<Flags>                BASE              </Flags>
+			<Persistent>           true                 </Persistent>
+			<Default>                                    </Default>
+		</avatarDBIDList>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+		<destroyAccount>
+			<Exposed/>
+		</destroyAccount>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

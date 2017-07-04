@@ -1,0 +1,26 @@
+<root>
+
+    <Implements>
+		<Interface>	        CombatProperty		</Interface>
+    </Implements>
+
+	<Properties>
+	</Properties>
+
+	<ClientMethods>
+		<OnDie>
+		</OnDie>
+	</ClientMethods>
+
+	<BaseMethods>
+
+	</BaseMethods>
+
+	<CellMethods>
+		<receiveDamage>
+			<Arg>           MAILBOX                  </Arg>
+			<Arg>           INT32                    </Arg>
+		</receiveDamage>
+	</CellMethods>
+
+</root>

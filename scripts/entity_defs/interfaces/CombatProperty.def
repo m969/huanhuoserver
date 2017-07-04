@@ -1,0 +1,38 @@
+<root>
+
+	<Properties>
+
+		<attackForce><!--攻击力-->
+			<Type>          INT32                </Type>
+			<Flags>         ALL_CLIENTS               </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       1                  </Default>
+		</attackForce>
+
+		<defensiveForce><!--防御力-->
+			<Type>          INT32                </Type>
+			<Flags>         ALL_CLIENTS               </Flags>
+			<Persistent>    true                </Persistent>
+			<Default>       1                  </Default>
+		</defensiveForce>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+
+	</BaseMethods>
+
+	<CellMethods>
+        <setOnOff>
+            <Arg>             UNICODE           </Arg>
+            <Arg>             INT32            </Arg>
+        </setOnOff>
+
+        <getOnOff>
+            <Arg>             UNICODE           </Arg>
+        </getOnOff>
+	</CellMethods>
+
+</root>

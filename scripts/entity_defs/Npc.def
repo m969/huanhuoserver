@@ -1,0 +1,69 @@
+<root>
+    <Volatile>
+		<position/>
+		<yaw/>
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Implements>
+		<Interface>	        EntityObject		</Interface>
+    </Implements>
+
+	<Properties>
+		<npcID>
+			<Type>            INT32            </Type>
+			<Flags>           ALL_CLIENTS         </Flags>
+			<Persistent>      true                </Persistent>
+			<Default>         0                </Default>
+		</npcID>
+
+		<entityName>
+			<Type>            UNICODE            </Type>
+			<Flags>           ALL_CLIENTS         </Flags>
+			<Persistent>      true                </Persistent>
+			<Default>         Npc                </Default>
+		</entityName>
+
+		<storeGoodsIDList>
+			<Type>            STORE_GOODS_ID_LIST            </Type>
+			<Flags>           ALL_CLIENTS         </Flags>
+		</storeGoodsIDList>
+
+		<avatarInfoKeepDict>
+			<Type>            INT32              </Type>
+			<Flags>           CELL_PRIVATE         </Flags>
+			<Persistent>      true                </Persistent>
+		</avatarInfoKeepDict>
+	</Properties>
+
+	<ClientMethods>
+		<NpcMethod>
+			<Arg>             INT32              </Arg>
+		</NpcMethod>
+	</ClientMethods>
+
+	<BaseMethods>
+		<createCell>
+			<Arg>             MAILBOX               </Arg>
+		</createCell>
+	</BaseMethods>
+
+	<CellMethods>
+		<requestDialog>
+			<Arg>             MAILBOX              </Arg>
+			<Arg>             INT32                   </Arg>
+		</requestDialog>
+
+		<requestTask>
+			<Exposed/>
+			<Arg>           UNICODE                 </Arg>
+		</requestTask>
+		
+		<requestBuyGoods>
+			<Arg>           MAILBOX              </Arg>
+			<Arg>           INT32                </Arg>
+		</requestBuyGoods>
+
+	</CellMethods>
+</root>

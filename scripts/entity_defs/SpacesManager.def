@@ -1,0 +1,55 @@
+<root>
+    <Volatile>
+		<position/>
+		<!--<position> 0 </position> Don't update-->
+		<yaw/>
+		<!--<pitch> 20 </pitch>-->
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Properties>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+        <loginToSpaceByName>
+            <Arg>              UNICODE                  </Arg>
+            <Arg>              MAILBOX                  </Arg>
+        </loginToSpaceByName>
+
+		<!--<loginToSpace>
+			<Arg>		MAILBOX		</Arg>
+			<Arg>		ENTITY_UTYPE	</Arg>
+			<Arg>		PYTHON		</Arg>
+		</loginToSpace>-->
+
+		<logoutSpace>
+			<Arg>		INT32	</Arg>
+			<Arg>		INT32	</Arg>
+		</logoutSpace>
+
+		<teleportToSpaceByName>
+			<Arg>       UNICODE                  </Arg>
+			<Arg>       VECTOR3                  </Arg>
+			<Arg>		MAILBOX					</Arg>
+		</teleportToSpaceByName>
+<!--
+		<onSpaceLoseCell>
+			<Arg>		ENTITY_UTYPE	</Arg>
+			<Arg>		DBID		</Arg>
+		</onSpaceLoseCell>
+
+		<onSpaceGetCell>
+			<Arg>		ENTITY_UTYPE	</Arg>
+			<Arg>		MAILBOX		</Arg>
+			<Arg>		DBID		</Arg>
+		</onSpaceGetCell>-->
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

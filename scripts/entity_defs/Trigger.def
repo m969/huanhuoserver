@@ -1,0 +1,74 @@
+<root>
+    <Volatile>
+		<position/>
+		<yaw/>
+		<pitch/>
+		<roll/>
+	</Volatile>
+
+	<Implements>
+		<Interface>			EntityObject		</Interface>
+	</Implements>
+
+	<Properties>
+		<triggerID>
+			<Type>                  INT32                  </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+			<Default>               0                   </Default>
+		</triggerID>
+
+		<triggerType>
+			<Type>                  UNICODE                  </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+			<Default>               Trigger                   </Default>
+		</triggerType>
+
+		<triggerSize>
+			<Type>                  INT32                  </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+			<Default>               1                   </Default>
+		</triggerSize>
+
+		<lifeSpans>
+			<Type>                  INT32                  </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+			<Default>               4                   </Default>
+		</lifeSpans>
+
+		<damage>
+			<Type>                  INT32              </Type>
+			<Flags>                 CELL_PRIVATE       </Flags>
+			<Default>               1                 </Default>                    
+		</damage>
+		<!-- 暂时没用 -->
+		<parentSkill>
+			<Type>                  UNICODE                </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+		</parentSkill>
+
+		<parentEntityID>
+			<Type>                  INT32                </Type>
+			<Flags>                 CELL_PUBLIC           </Flags>
+		</parentEntityID>
+
+		<spellCaster>
+			<Type>                  MAILBOX               </Type>
+			<Flags>                 CELL_PUBLIC           </Flags>
+		</spellCaster>
+
+		<triggerStrategy>
+			<Type>                  PYTHON                </Type>
+			<Flags>                 ALL_CLIENTS            </Flags>
+		</triggerStrategy>
+	</Properties>
+
+	<ClientMethods>
+	</ClientMethods>
+
+	<BaseMethods>
+	</BaseMethods>
+
+	<CellMethods>
+	</CellMethods>
+
+</root>

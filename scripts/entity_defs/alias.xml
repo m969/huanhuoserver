@@ -1,0 +1,66 @@
+<root>
+    <ENTITY_ID>        INT32           </ENTITY_ID>
+    <DBID>             UINT64      </DBID>
+    <DBID_LIST> FIXED_DICT
+        <implementedBy>DBID_LIST.dbid_list_inst</implementedBy>
+        <Properties>
+            <values>
+                <Type>      ARRAY     <of>    UINT64      </of>      </Type>
+            </values>
+        </Properties>
+    </DBID_LIST> 
+    <STORE_GOODS_ID_LIST> FIXED_DICT
+        <implementedBy>DBID_LIST.dbid_list_inst</implementedBy>
+        <Properties>
+            <values>
+                <Type>      ARRAY     <of>    INT32      </of>      </Type>
+            </values>
+        </Properties>
+    </STORE_GOODS_ID_LIST>
+
+    <TASK_INFO> FIXED_DICT
+		<implementedBy>TASK_INFO.task_info_inst</implementedBy>
+		<Properties>
+            <taskNpcName>
+                <Type>      UNICODE            </Type>
+            </taskNpcName>
+            <taskIndex>
+                <Type>      INT32             </Type>
+            </taskIndex>
+            <isTaskFinish>
+                <Type>      INT32             </Type>
+            </isTaskFinish>
+            <isTaskCommit>
+                <Type>      INT32             </Type>
+            </isTaskCommit>
+		</Properties>
+    </TASK_INFO>
+
+    <TASK_INFO_LIST> FIXED_DICT
+        <implementedBy>TASK_INFO.task_info_list_inst</implementedBy>
+        <Properties>
+            <values>
+                <Type>      ARRAY     <of>    TASK_INFO      </of>      </Type>
+            </values>
+        </Properties>
+    </TASK_INFO_LIST>
+
+    <AVATAR_BAG> FIXED_DICT
+        <implementedBy>AVATAR_BAG.avatar_bag_inst</implementedBy>
+        <Properties>
+            <values>
+                <Type>      ARRAY     <of>    INT32        </of>       </Type>
+            </values>
+        </Properties>
+    </AVATAR_BAG>
+
+    <!--郑晓飞--玩家的朋友列表数据库格式-->
+    <AVATAR_FRIENDS> FIXED_DICT
+        <implementedBy>FRIENDS_INFO.friends_info_inst</implementedBy>
+        <Properties>
+            <values>
+                <Type>     ARRAY      <of>   UNICODE      </of>        </Type>
+            </values>        
+        </Properties>
+    </AVATAR_FRIENDS>
+</root>
