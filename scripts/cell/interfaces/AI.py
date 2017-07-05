@@ -136,7 +136,7 @@ class AI:
                                                (0.0, 0.0, 0.0),
                                                {
                                                    'lifeSpans': 2,
-                                                   'name': "MuJingGuaiSkill",
+                                                   'name': "WolfSkill1",
                                                    'triggerID': 3,
                                                    'triggerSize': 2,
                                                    'damage': 10,
@@ -145,14 +145,16 @@ class AI:
                                                    'triggerStrategy': triggerStrategy
                                                })
                 self.allClients.Attack_01()
+                # 技能移动到目标位置
+                bullet.moveToPointSample((point.x, 1, point.z), self.skillSpeed)
             else:
-                bullet = KBEngine.createEntity("Trigger",
+                bullet1 = KBEngine.createEntity("Trigger",
                                                self.spaceID,
                                                (self.position.x, 1, self.position.z),
                                                (0.0, yaw, 0.0),
                                                {
                                                    'lifeSpans': 2,
-                                                   'name': "YanshilingGuaiSkill",
+                                                   'name': "WolfSkill2",
                                                    'triggerID': 3,
                                                    'triggerSize': 2,
                                                    'damage': 10,
@@ -161,8 +163,8 @@ class AI:
                                                    'triggerStrategy': triggerStrategy
                                                })
                 self.allClients.Attack_02()
-            # 技能移动到目标位置
-            bullet.moveToPointSample((point.x, 1, point.z), self.skillSpeed)
+                # 技能移动到目标位置
+                bullet1.moveToPointSample((point.x, 1, point.z), self.skillSpeed)
 
     def addTerritory(self):
         """
@@ -252,7 +254,7 @@ class AI:
                 self.yanshilingMonsterSkill(self.targetEntity.position, self.position.y)
 
             # 木精怪释放技能
-            if self.name == "木精怪":
+            if (self.name == "木精怪") | (self.name == "绿雾灵怪"):
                 self.woodMonsterSkill(self.targetEntity.position, self.position.y)
 
             # 狼兽人怪释放技能
