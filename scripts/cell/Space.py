@@ -138,6 +138,6 @@ class Space(KBEngine.Entity, EntityObject):
                                             {
                                                 "name": name,
                                                 'entityName': name,
-                                                'modelName': monster_data.data[monsterName]["模型名称"]
+                                                'modelName': monster_data.data[name]["模型名称"]
                                             })
         monster.receiveSpawnPos(spawnPos)
