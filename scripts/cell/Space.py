@@ -137,7 +137,7 @@ class Space(KBEngine.Entity, EntityObject):
         monster = KBEngine.createEntity("Monster", self.spaceID, spawnPos, (0.0, 0.0, 0.0),
                                             {
                                                 "name": name,
-                                                'entityName': name
+                                                'entityName': name,
                                                 'modelName': monster_data.data[monsterName]["模型名称"]
                                             })
         monster.receiveSpawnPos(spawnPos)
