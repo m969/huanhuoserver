@@ -20,7 +20,7 @@ class Monster(KBEngine.Entity, EntityObject, CombatEntity, AI):
         self.spawnPos = (0, 0, 0)
         self.timerMoveID = self.addTimer(0, 4, 1)
         self.monsterData = monster_data.data[self.name]
-        # self.modelName = self.monsterData["模型名称"]
+        self.modelName = self.monsterData["模型名称"]
         DEBUG_MSG("modelName is " + str(self.modelName))
         self.HP = self.monsterData["生命值"]
         self.HP_Max = self.monsterData["生命值"]
