@@ -29,7 +29,7 @@ class Account(KBEngine.Proxy):
             self.avatar = KBEngine.createBaseLocally("Avatar", {})
             if self.avatar:
                 self.avatar.accountEntity = self
-                self.avatar.cellData["position"] = (211.4, 0.44, 253.6)
+                self.avatar.cellData["position"] = (120.4, 0.44, 90.6)
                 self.avatar.cellData["direction"] = (0.0, 0.0, 0.0)
                 self.avatar.cellData["entityName"] = self.__ACCOUNT_NAME__
                 self.avatar.writeToDB(self._onAvatarSaved)
