@@ -307,7 +307,8 @@ class Avatar(KBEngine.Entity, EntityObject, CombatEntity):
         DEBUG_MSG("Avatar:deleteGoods")
         tempBag = self.avatarBag
         DEBUG_MSG(tempBag)
-        del tempBag[goodsID]
+        if goodsID in tempBag.keys():
+            del tempBag[goodsID]
         self.avatarBag = tempBag
         DEBUG_MSG(self.avatarBag)
         # 郑晓飞--千里送情任务--将信给予刘公子(丢弃)
